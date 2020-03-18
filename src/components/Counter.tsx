@@ -6,18 +6,20 @@ import { IStore } from '../types'
 interface IProps {
   number: number,
   add: any,
-  subtract: any
+  subtract: any,
+  syncAdd: any
 }
 
 class CounterComponent extends React.Component<IProps> {
 
   render() {
-    let { number, add, subtract } = this.props
+    let { number, add, subtract, syncAdd } = this.props
     return (
       <div>
         <p>{number}</p>
         <button onClick={add}>+</button>
         <button onClick={subtract}>-</button>
+        <button onClick={syncAdd}>异步加1</button>
       </div>
     )
   }

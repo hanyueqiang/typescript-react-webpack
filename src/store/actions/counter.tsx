@@ -15,5 +15,13 @@ export default {
   },
   subtract(): Subtract {
     return { type: types.SUBTRACT }
+  },
+  syncAdd(): any {
+    return function (dispatch, getState: any) {
+      setTimeout(() => {
+        dispatch({ type: types.ADD })
+
+      }, 1000)
+    }
   }
 }
